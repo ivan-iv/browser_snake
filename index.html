@@ -1,0 +1,26 @@
+<body>
+<div style="display: flex; align-items: center; justify-content: center; height: 100%">
+    <div style="position: relative">
+        <canvas width="400" height="400" style="border: 2px solid gray; margin-bottom: 10px"></canvas>
+        <div style="width: 400px; height: 20px">
+            <div style="float: left">
+                <div id="invite">Press "Space" for play. Use ←, →, ↓, ↑ for direction.</div>
+                <div id="die" style="display: none">You're dead, press "Space" for restart.</div>
+                <div id="win" style="display: none">You win!</div>
+                <div id="crawl" style="display: none">_/\__/\__0&gt;</div>
+            </div>
+            <div id="hud" style="float: right; display: none">
+                <span>fruits: </span>
+                <span id="counter" style="font-weight: bold">INIT/INIT</span>
+                <span style="margin-left: 10px">level: </span>
+                <span id="level" style="font-weight: bold">INIT</span>
+            </div>
+        </div>
+        <pre id="splash" style="position: absolute; top: 170px; left: 52px">
+  ________________________/ O  \___/
+ &gt;888888888888888888888888_____/   \
+    </pre>
+    </div>
+</div>
+<script src="./dist/bundle.js"></script>
+</body>

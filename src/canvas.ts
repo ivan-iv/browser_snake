@@ -25,6 +25,7 @@ export class Canvas {
 
         this._ctx.strokeStyle = "lightgray";
         this._ctx.lineWidth = 2;
+
         // Draw vertical lines
         this._ctx.beginPath();
         for (let i = 1; i < this._width; i++) {
@@ -32,6 +33,7 @@ export class Canvas {
             this._ctx.lineTo(i * this._cellSizePx, this._ctx.canvas.height);
         }
         this._ctx.stroke();
+
         // Draw horizontal lines
         this._ctx.beginPath();
         for (let i = 1; i < this._height; i++) {
@@ -39,7 +41,6 @@ export class Canvas {
             this._ctx.lineTo(this._ctx.canvas.width, i * this._cellSizePx);
         }
         this._ctx.stroke();
-
     }
 
     get height() {

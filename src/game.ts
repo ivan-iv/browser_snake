@@ -29,9 +29,10 @@ export class Game {
     }
 
     private _onInitialState() {
-        this._textManager.hide("die");
-        this._textManager.hide("splash");
-        this._textManager.show("invite");
+        this._textManager
+            .hide("die")
+            .hide("splash")
+            .show("invite");
         this._hud.hide();
 
         this._updateStats(0, this._levels[0]);
@@ -45,20 +46,23 @@ export class Game {
     }
 
     private _onGameOverState() {
-        this._textManager.hide("crawl");
-        this._textManager.show("die");
+        this._textManager
+            .hide("crawl")
+            .show("die");
     }
 
     private _onPlayState() {
-        this._textManager.hide("invite");
-        this._textManager.show("crawl");
+        this._textManager
+            .hide("invite")
+            .show("crawl");
         this._hud.show();
         this._snake!.start();
     }
 
     private _onWinState() {
-        this._textManager.hide("crawl");
-        this._textManager.show("win");
+        this._textManager
+            .hide("crawl")
+            .show("win");
         this._hud.hide();
         this._snake!.stop();
     }

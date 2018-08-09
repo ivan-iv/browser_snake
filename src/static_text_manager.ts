@@ -31,6 +31,7 @@ export class StaticTextManager {
         if (text) {
             text.show();
         }
+        return this;
     }
 
     hide(textType: StaticTextType) {
@@ -38,6 +39,7 @@ export class StaticTextManager {
         if (text) {
             text.hide();
         }
+        return this;
     }
 
     _texts: Map<StaticTextType, StaticText>;

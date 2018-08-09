@@ -26,16 +26,16 @@ export class StaticTextManager {
         this._texts.set("win", new StaticText("#win"));
     }
 
-    show(textType: StaticTextType) {
-        const text = this._texts.get(textType);
+    show(type: StaticTextType) {
+        const text = this._texts.get(type);
         if (text) {
             text.show();
         }
         return this;
     }
 
-    hide(textType: StaticTextType) {
-        const text = this._texts.get(textType);
+    hide(type: StaticTextType) {
+        const text = this._texts.get(type);
         if (text) {
             text.hide();
         }

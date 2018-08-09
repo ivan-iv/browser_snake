@@ -34,14 +34,9 @@ export class Game {
             .hide("splash")
             .show("invite");
         this._hud.hide();
-
         this._updateStats(0, this._levels[0]);
-
         this._snake = this._createSnake();
         this._apple = this._createApple();
-        this._snake.activate();
-        this._apple.activate();
-
         this._scene.start();
     }
 
@@ -89,8 +84,6 @@ export class Game {
         this._updateStats(0, this._levels[this._level!.lvl]);
         this._snake = this._createSnake();
         this._apple = this._createApple();
-        this._snake.activate();
-        this._apple.activate();
         this._snake.start();
     }
 
@@ -112,7 +105,6 @@ export class Game {
             this._nextLevel();
         } else {
             this._apple = this._createApple();
-            this._apple.activate();
             this._updateStats(newCounter, this._level!);
         }
     };
@@ -126,6 +118,7 @@ export class Game {
         this._scene.add(snake);
         snake.subscribe(Snake.Event.OnDie, this._onDieEvent);
         snake.speed = this._level!.speed;
+        snake.activate();
         return snake;
     }
 
@@ -137,6 +130,7 @@ export class Game {
         const apple = new Apple();
         this._scene.add(apple);
         apple.subscribe(Apple.Event.OnEat, this._onEatEvent);
+        apple.activate();
         return apple;
     }
 
